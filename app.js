@@ -12,7 +12,6 @@ const { setupSocketIO } = require('./socket');
 
 // Import controllers
 const attendanceController = require('./controllers/attendanceController');
-const loanController = require('./controllers/loanController');
 
 // Cấu hình dotenv
 dotenv.config();
@@ -48,17 +47,14 @@ setupSocketIO(io);
 
 // Thiết lập Socket.IO cho các controller
 attendanceController.setIo(io);
-loanController.setIo(io);
 
 // Import routes
-const bookRoutes = require('./routes/bookRoutes');
 const attendanceRoutes = require('./routes/attendanceRoutes');
-const loanRoutes = require('./routes/loanRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 // Routes
 app.get('/', (req, res) => {
-  res.json({ message: 'Chào mừng đến với Hệ thống Thư viện API' });
+  res.json({ message: 'Chào mừng đến với Hệ thống checkIn-checkOut' });
 });
 
 // API Routes

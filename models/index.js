@@ -1,7 +1,5 @@
 const { sequelize } = require('../config/database');
-const Book = require('./Book');
 const User = require('./User');
-const Loan = require('./Loan');
 const Card = require('./Card');
 const Attendance = require('./Attendance');
 
@@ -17,9 +15,7 @@ const syncModels = async () => {
 };
 
 module.exports = {
-  Book,
   User,
-  Loan,
   Card,
   Attendance,
   syncModels
